@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101c2a" />
+  <title>Four Winds — An Avatar Adventure</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="world" aria-label="Four Winds open world game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><b>FOUR WINDS</b><small>AN AVATAR ADVENTURE</small></div></div>
+      <div class="location"><span class="location-dot"></span><span id="location-name">THE JADE MEADOWS</span></div>
+      <button id="map-button" class="icon-button" aria-label="Show map">⌖ <span>MAP</span></button>
+    </header>
+    <section class="hud-left">
+      <div class="player-card"><div id="element-symbol" class="element-symbol">✦</div><div><small>YOUR ELEMENT</small><strong id="element-label">UNBOUND</strong></div><div class="level-tag">旅</div></div>
+      <div class="quest-card"><div class="quest-kicker"><span class="quest-spark">✧</span> JOURNEY</div><strong id="quest-title">A light in the meadow</strong><p id="quest-copy">Find the Avatar near the old stone arch.</p><div class="quest-progress"><span id="quest-count">0 / 3</span><div class="progress-track"><i id="progress-fill"></i></div></div></div>
+    </section>
+    <div class="controls-hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVE</span><i></i><kbd>E</kbd><span>TALK</span><i></i><kbd>SPACE</kbd><span>BEND</span></div>
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <div id="interact-prompt" class="interact-prompt"><span>E</span> <b>Talk</b></div>
+    <div id="dialogue" class="dialogue hidden" role="dialog" aria-modal="true"><div class="dialogue-top"><span class="dialogue-emblem">✧</span><div><small id="speaker-label">TRAVELER</small><strong id="speaker-name">Aang</strong></div><button id="close-dialogue" aria-label="Close dialogue">×</button></div><p id="dialogue-text"></p><button id="dialogue-next" class="dialogue-next">CONTINUE <span>↗</span></button></div>
+    <div id="map-overlay" class="map-overlay hidden"><div class="map-card"><button id="close-map" class="close-map">×</button><small>THE FOUR NATIONS</small><h2>Your journey</h2><div class="map-art"><span class="map-route"></span><span class="map-pin pin-player">✦<i>You</i></span><span class="map-pin pin-avatar">☯<i>Avatar</i></span><span class="map-pin pin-village">⌂<i>Village</i></span><span class="map-compass">N<br>▲</span></div><p>Travel to the old stone arch and find the Avatar.</p></div></div>
+    <div id="setup" class="setup-screen"><div class="setup-art"><div class="setup-orb orb-one"></div><div class="setup-orb orb-two"></div><div class="setup-sun"></div><div class="setup-mountains"></div><div class="setup-figure">✦</div><div class="setup-caption">A NEW STORY BEGINS</div></div><div class="setup-content"><div class="eyebrow">A TALE OF THE FOUR NATIONS</div><h1>Find your<br/><em>own balance.</em></h1><p class="intro">The spirit paths are stirring. Choose how you shape the world—and who you want by your side.</p><div class="step-heading"><span>01</span><b>CHOOSE YOUR ELEMENT</b></div><div class="element-options">
+      <button class="element-option" data-element="Water"><span class="element-art water-art">≈</span><b>Water</b><small>Flow & restore</small></button>
+      <button class="element-option" data-element="Earth"><span class="element-art earth-art">◆</span><b>Earth</b><small>Root & endure</small></button>
+      <button class="element-option" data-element="Fire"><span class="element-art fire-art">♨</span><b>Fire</b><small>Rise & illuminate</small></button>
+      <button class="element-option" data-element="Air"><span class="element-art air-art">〰</span><b>Air</b><small>Drift & discover</small></button>
+    </div><div class="step-heading romance-heading"><span>02</span><b>CHOOSE YOUR COMPANION</b><small>your heart, your story</small></div><div class="romance-options"><button class="romance-option selected" data-romance="Kai"><span class="portrait kai">K</span><span><b>Kai</b><small>Water Tribe healer · kind</small></span><span class="heart">♡</span></button><button class="romance-option" data-romance="Ren"><span class="portrait ren">R</span><span><b>Ren</b><small>Fire Nation artist · brave</small></span><span class="heart">♡</span></button></div><button id="begin-button" class="begin-button" disabled>CHOOSE AN ELEMENT TO BEGIN <span>→</span></button><div class="setup-foot">A peaceful, story-driven open-world adventure</div></div></div>
+    <div id="mobile-controls" class="mobile-controls"><button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div><button id="mobile-action">✧</button><button id="mobile-talk">E</button></div>
+    <footer class="bottom-note"><span>✦</span> A WORLD WAITING TO BE FOUND</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
